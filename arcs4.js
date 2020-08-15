@@ -47,6 +47,17 @@ var colours = [
 
 ];
 
+function preload() {
+  paper = loadImage('data/paper1.jpg');
+    fullscreen(1)
+
+
+}
+
+function waste(){
+
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   dimensionCalc();
