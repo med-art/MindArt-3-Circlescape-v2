@@ -49,7 +49,7 @@ var colours = [
 
 function preload() {
   paper = loadImage('data/paper1.jpg');
-    fullscreen(1)
+
 
 
 }
@@ -346,6 +346,9 @@ function colorAlpha(aColor, alpha) {
 }
 
 function changeArc() {
+  if (!fullscreen()) {
+    fullscreen(1);
+  }
   toggle = !toggle;
 
   if (toggle){
