@@ -89,7 +89,7 @@ function windowResized(){
   restartBtn.position(width - (14*vMax), height-(6.5*vMax));
   restartBtn.mouseClicked(reset);
   restartBtn.class("select");
-  button.id("restart");
+  restartBtn.id("restart");
   restartBtn.style('font-size', '2.6vmax');
   restartBtn.style('height', '4.5vmax');
 
