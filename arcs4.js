@@ -60,6 +60,7 @@ function waste(){
 
 function start() {
   $(".startBtn").remove();
+  
   fullscreen(1);
   // note currently everything resets on windowResized. Unsure if this is logical yet
 }
@@ -359,9 +360,7 @@ function colorAlpha(aColor, alpha) {
 }
 
 function changeArc() {
-  if (!fullscreen()) {
-    fullscreen(1);
-  }
+
   toggle = !toggle;
 
   if (toggle){
