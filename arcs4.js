@@ -58,12 +58,27 @@ function waste(){
 
 }
 
+function start() {
+  $(".startBtn").remove();
+  fullscreen(1);
+  // note currently everything resets on windowResized. Unsure if this is logical yet
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+}
+
+function windowResized(){
+  resizeCanvas(windowWidth, windowHeight);
   dimensionCalc();
+
+  $("#toggle").remove();
+  $("restart").remove();
+
+
   button = createButton('Arc');
   button.position(40, height-(6.5*vMax));
-  button.mousePressed(changeArc);
+  button.mouseClicked(changeArc);
   button.class("select");
   button.id("toggle");
   button.style('font-size', '2.6vmax');
@@ -71,8 +86,9 @@ function setup() {
 
   restartBtn = createButton('Restart');
   restartBtn.position(width - (14*vMax), height-(6.5*vMax));
-  restartBtn.mousePressed(reset);
+  restartBtn.mouseClicked(reset);
   restartBtn.class("select");
+  button.id("restart");
   restartBtn.style('font-size', '2.6vmax');
   restartBtn.style('height', '4.5vmax');
 
@@ -97,9 +113,6 @@ function setup() {
   colVersion = colours.length; // set to max, as this will cause reset to 0;
   levelVersion = levelMax;
   reset();
-
-
-
 
 }
 
